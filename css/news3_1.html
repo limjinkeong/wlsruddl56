@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /*reset*/
+    * {margin: 0; padding: 0;}
+    ul,ol{list-style: none;}
+    a{text-decoration: none; color:#000;}
+    img{vertical-align: top;}
+  /*layout*/
+
+  /*wrap은 전체틀*/
+    .wrap{
+      width: 900px;
+      height: 540px;
+      outline: 1px #F00 solid;
+      margin: 30px auto;
+    }
+    /*wrap(전체틀)안에있는 상단바(top)*/
+    .wrap .top{
+      outline: 1px #F00 solid;
+      height: 111px;
+      margin: 0 30px 20px;
+    }
+    .wrap .top_q span.top_image img{
+      outline: 1px #F00 solid;
+      float: left;
+      margin: 0;
+    }
+    .wrap .top_q span.left_image img{
+      outline: 1px #F00 solid;
+      float: right;
+      margin: 10px 0;
+    }
+    .wrap .top .top_Btngroup{
+      float: left;
+      clear: right;
+      font-size: 11px;
+    }
+    /*wrap(전체틀)안에 들어있는 전체 contents(하단뉴스틀)*/
+    .wrap .contents{
+      outline: 1px #F00 solid;
+      height: 380px;
+      margin: 0 30px;
+    }
+    /*contents(하단뉴스틀)안에 들어있는 왼쪽 뉴스틀*/
+    .contents .left-contents{
+      outline: 1px #00F solid;
+      width: 580px;
+      height: 100%;
+    }
+    /*contents(하단뉴스틀)안에 first-news(첫번째뉴스칸)안에 strong(제목)*/
+    .contents .first-news strong{
+      outline: 1px #F00 solid;
+      font-size: 24px;
+      margin-bottom: 10px;
+      /*->제목 밑에 10px 띈다*/
+      display: block;
+      /*->블록요소로 바꾼다.*/
+    }
+    /*contents(하단뉴스틀)안에 first-news(첫번째뉴스칸)안에 span(class-thumb 이미지틀)*/
+    /*span.thumb를 붙이는 이유는 span안에 클라스가 thumb이기 때문에*/
+    .contents .first-news span.thumb{
+      outline: 1px #F00 solid;
+      width: 160px;
+      height: 94px auto;
+      float: left;
+      display: block;
+      margin-right: 15px;
+      /*이미지의 마진을 15px준다    */
+    }
+    /*contents(하단뉴스틀)안에 first-news(첫번째뉴스칸)안에 span(class-thumb 이미지틀)안에 img(본이미지) */
+    .contents .first-news span.thumb img{
+      width: 100%;
+      height: 100%;
+      /*가로 세로값을 위에 이미지틀에 맞게 넣어준다*/
+    }
+    /*contents(하단뉴스틀)안에 first-news(첫번째뉴스칸)안에 ul(생략가능)안에 li(목록들)*/
+    .contents .first-news li{
+      outline: 1px #F00 solid;
+      margin-left: 175px;
+      font-size: 12px;
+    }
+    /*contents(하단뉴스틀)안에 first-news(첫번째뉴스칸)안에 있는
+    li안에있는first-> span안에있는thumb와 span */
+    .contents .first-news li.first span.thumb + span{
+      outline: 1px #F00 solid;
+    }
+    /*contents(하단뉴스틀)안에 first-news(첫번째뉴스칸)안에 있는
+    li안에있는first*/
+    .contents .first-news li.first{
+      margin: 0 0 10px 0;
+    }
+
+    .contents .second-news .static{
+      outline: 1px #F00 solid;
+      width: 162px;
+      float: left;
+      background-color: #CCC;
+      margin-top: 10px;
+    }
+    .contents .second-news .static li div{
+      width: 125px;
+      height: 78px;
+      outline: 1px #F00 solid;
+      margin: 0 auto;
+    }
+    .contents .second-news .static li span{
+      outline: 1px #F00 solid;
+      font-size: 11px;
+      margin: 5px 15px;
+      display:block;
+    }
+    .contents .second-news .static li span img {
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="top_q">
+        <span class="top_image"><img src="http://static.naver.net/newsstand/up/2013/0813/nsd114836462.gif" alt=""></span>
+        <span class="left_image"><img src="http://adcreative.naver.com/ad3/1004/1004874/468_60_01484642590306.jpg" alt=""></span>
+      </div>
+      <div class="top_Btngroup">
+        <button>구독하기</button>
+        <button>이용자한마디</button>
+        <button>소셜보내기</button>
+        <span>01-23 10:21편집</span>
+      </div>
+    </header>
+
+    <section class="contents">
+
+      <div class="left-contents">
+
+        <article class="first-news">
+          <ul>
+            <li class="first">
+              <a href="#">
+                <strong>삼성 “갤노트7 발화 원인은 배터리 결함 때문”</strong>
+                <!-- span이 두개이므로 한개에 클라스를 줬음 -->
+                <span class="thumb"><img src="http://static.naver.net/newsstand/2017/0124/etnews/124047/001.jpg" alt=""></span>
+                <span>삼성전자는 23일 기자간담회를 갖고 갤럭시노트7 발화 원인이 배터리 자체 결함이라고 최종 발표했다. 차기작 `갤럭시S8` 등 스마트폰
+                  안전성 강화를 위한 부품 전문팀 구...</span>
+              </a>
+            </li>
+            <li><a href="#">[이슈분석] 삼성전자 "갤럭시S8 혁신으로 세계 스마트폰 1</a></li>
+            <li><a href="#">[이슈분석] 삼성전자 "갤럭시S8 혁신으로 세계 스마트폰 1</a></li>
+          </ul>
+        </article>
+
+        <article class="second-news">
+          <div class="static">
+          <ul>
+            <li>
+              <span><img src="http://static.naver.net/newsstand/2017/0124/etnews/091348/002.jpg" alt=""></span>
+              <span>10년뒤 무한에너지?···"2027년 융합로 상용화"</span>
+            </li>
+            <li>
+              <span><img src="http://static.naver.net/newsstand/2017/0124/etnews/091348/002.jpg" alt=""></span>
+              <span>10년뒤 무한에너지?···"2027년 융합로 상용화"</span>
+            </li>
+          </ul>
+        </div>
+        </article>
+      </div>
+
+
+      <div class="right-contents">
+
+      </div>
+    </section>
+  </div>
+</body>
+</html>
