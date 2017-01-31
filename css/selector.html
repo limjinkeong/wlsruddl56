@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        /*div{border:1px #F00 solid;}*/
+        /*.wrap{border:1px #F00 solid;}*/
+        /*#title{border:1px #F00 solid;}*/
+        /*.wrap,#title{border:1px #F00 solid;}*/
+        /*.wrap li{border:1px #F00 solid;}*/
+        /*.wrap a,*/
+        /*.wrap ul{border:1px #F00 solid;}*/
+        /*#title +ul{border:1px #F00 solid;}*/
+        /*.target +li+li+li{border:1px #F00 solid;}*/
+        /*.target~li{border:1px #F00 solid;}*/
+
+        /*.wrap>ul>li:first-child{border:1px #F00 solid;}*/
+        /*.wrap>ul>li:last-child{border:1px #F00 solid;}*/
+
+        /*a:link{border:1px #F00 solid;}*/
+        /*a:hover{color:#F00;}*/
+        /*a:active{color:#0F0;}*/
+        /*a:visited{color:#00F;}*/
+
+        /*.wrap li ul{display:none;}*/
+        /*.wrap li:hover ul{display:block;}*/
+
+        /*.wrap li ul{height:0;overflow:hidden; transition:1s;}*/
+        /*.wrap li:hover ul{height:100px;}*/
+
+        /*img[alt="파일psd"]{border:1px #F00 solid;}*/
+        /*img[alt^="파일"]{border:1px #F00 solid;}*/
+        /*img[alt$="psd"]{border:1px #F00 solid;}*/
+        /*img[alt*="p"]{border:1px #F00 solid;}*/
+        /*[id^="title"]{font-size:50px;}*/
+        /*[id$="solid"]{border:1px #F00 solid;}*/
+        /*[id*="red"]{color:red;}*/
+        /*div.wrap.title*/
+
+
+        q::before{
+            content:open-quote;
+        }
+        q::after{
+            content:close-quote;
+        }
+
+        .name::before{
+            content:"";
+            border:1px #F00 solid;
+            display:block;
+            width:100px;
+            height:100px;
+        }
+
+        .name::after{
+            content:"";
+            border:1px #F00 solid;
+            display:block;
+            width:100px;
+            height:100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p><q>안녕하세요</q></p>
+
+    <span class="name">김민철</span>
+
+
+    <div class="wrap title">
+        <h2 id="title_solid">title</h2>
+        <ul>
+            <li><a href="#">text</a>
+                <ul>
+                    <li><a href="">text</a></li>
+                    <li><a href="">text</a></li>
+                    <li><a href="">text</a></li>
+                    <li><a href="">text</a></li>
+                </ul>
+            </li>
+            <li  class="target"><a href="">text</a>
+                <ul>
+                    <li><a href=""><input type="text"></a></li>
+                    <li><a href=""><input type="button" value="확인"></a></li>
+                    <li><a href=""><input type="checkbox"></a></li>
+                    <li><a href="">text</a></li>
+                </ul>
+            </li>
+           <li  class="target"><a href="">text</a>
+                <ul>
+                    <li><a href=""><img src="" alt="파일pdf"></a></li>
+                    <li><a href=""><img src="" alt="파일hwp"></a></li>
+                    <li><a href=""><img src="" alt="파일html"></a></li>
+                    <li><a href=""><img src="" alt="파일psd"></a></li>
+                    <li><a href=""><img src="" alt="파일psd"></a></li>
+                    <li><a href=""><img src="" alt="파일psd"></a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <div>
+        <input type="button" name="" value="확인"/>
+    </div>
+</body>
+</html>
