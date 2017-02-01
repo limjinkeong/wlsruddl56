@@ -1,80 +1,413 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>보배드림</title>
+
   <style>
-    .top_a{
-      outline: 1px #F00 solid;
-      font-size: 5px;
-      margin: 0 100px;
-    }
-    .star{
-      background-image: url(../image/bobae_header/star.png);
-      background-repeat: no-repeat;
-      width: 10px;
-      height: 15px;
-    }
-    .ten{
-      background-image: url(../image/bobae_header/num10.png);
-      background-repeat: no-repeat;
-      width: 10px;
-      height: 15px;
-    }
-    .login{
-      float: right;
-    }
-    .my_button{
-      background-image: url(../image/bobae_header/my_b.png);
-      background-repeat: no-repeat;
-      width: 10px;
-      height: 15px;
-    }
-    .mobile_icon{
-      background-image: url(../image/bobae_header/모바일-아이콘.png);
-      background-repeat: no-repeat;
-      width: 5px;
-      height: 15px;
-    }
+	/*reset*/
+	html { overflow-x:hidden; }
+	html, body { width:100%; height:100%; -webkit-text-size-adjust:none; }
+	html, body, div, span, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select, label, iframe, img  { padding:0; margin:0; border:0; }
+	body { font-family:"dotum", sans-serif; font-size:16px; color:#333333; }
+	h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+	img, fieldset, button { border:none; }
+	img, input, button { vertical-align:baseline; }
+	img { vertical-align:middle; }
+	ol, ul { list-style:none; }
+	address, em { font-style:normal; }
+	a { text-decoration:none; color:#333;  }
+	a:hover, a:active, a:focus, a:visited { text-decoration:none; }
+	br { display:block; }
+	hr, legend, caption { display:none; }
+	table { width:100%; border-collapse:collapse; border-spacing:0; word-break:break-all; }
+	input, select { color:#555; }
+	input, select, option, textarea { font-family:"dotum", sans-serif; }
+	button { background:none; cursor:pointer; _cursor/**/:hand; font-family:"dotum", sans-serif; }
+	button::-moz-focus-inner { padding:0; border:0; }
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+	input { outline-style:none; }
+	/*//reset*/
+
+	.util { background:#f8f8f8; border-bottom:1px solid #d5d0cc; width:100%; height:30px; line-height:30px; color:#373737; font-size:11px; }
+	.util:after { display:block; width:100%; content:''; clear:both;  }
+	.util .inner { margin:0 auto; width:990px; }
+	.util .util_left { float:left; }
+  .util_left .star { background: url(../image/bobae_header/star.png); width: 10px; height: 10px; display:inline-block;}
+  .util_left .tn { background: url(../image/bobae_header/num10.png); width: 14px; height: 13px; display: inline-block;}
+	.util .util_right { float:right; }
+	.util .util_right li { display:inline-block; }
+  .util_right .mi {background: url(../image/bobae_header/my_b.png); width: 12px; height: 12px; display: inline-block;}
+  .util_right .bi {background: url(../image/bobae_header/bb.png); width: 8px; height: 12px; display: inline-block;}
+
+	#wrap { width:990px; margin:0 auto; }
+
+	header { margin-top:15px; }
+
+	header .hta { position:relative; height:76px; }
+	header h1 { width:105px; height:27px; background:url(../image/images/logo.jpg); text-indent:-9999px; position:absolute; left:0; top:19px; }
+
+	.quick_menu { font-size:13px; color:#666; position:absolute; left:0; top:60px; }
+	.quick_menu li { display:inline-block; font-weight:bold; }
+	.quick_menu li a { color:#666; }
+
+	.search { width:280px; box-sizing:border-box; background:#fff; position:relative; margin:0 auto; }
+	.search input { box-sizing:border-box; }
+	.search_bn { background:url(../image/images/top_banner1.jpg); width:237px; height:48px; margin:0 auto;}
+	.search_a { width:240px; height:25px; border:2px solid #3b5999; }
+	.search_b { width:40px; height:25px; background:#3b5999 url(../image/images/zoom.png) no-repeat 50% 5px; position:absolute; bottom:0; right:0;  }
+
+	.top_banner { width:233px; height:76px;  position:absolute; top:0; right:0; }
+  .top_banner .top_banner_a { width: 96px; height: 50px; top:0; left:0; background: url(../image/bobae_header/a.png);position:absolute;}
+  .top_banner .top_banner_b { width: 137px; height: 72px; top:0; right:0; bottom: 0; background: url(../image/bobae_header/b.png);position:absolute;}
+  .top_banner .top_banner_c { width: 31px; height: 15px; bottom: 5px; left: 5px; background: url(../image/bobae_header/c.png); position: absolute;}
+
+	.gnb { background:#3b5999; height: 40px;}
+	.gnb > ul {  }
+	.gnb .depth1 { display:inline-block; position:relative;}
+	.gnb .depth1 h2 { font-weight:bold; font-size:15px; margin: 10px;}
+	.gnb .depth2 { position:absolute; top:20px; left:0; font-size:13px; color:#666; width:990px;  border-bottom: 1px solid #c7cbce; }
+	.gnb .depth2 a { color:#666; }
+  .gnb .depth2 li { font-size: 13px; display:inline-block; margin: 20px 3px; }
+  .depth2 .visit { position:absolute; right:0; top:3px;}
+  .depth2 .nm { color:#005dde; }
+
+  .main_banner { width: 750px; height: 100px;  margin-top:45px; position: relative;}
+  .main_banner .main_b_i { width: 520px; height: 100px; background: url(../image/images/main_bn.jpg);position: absolute;}
+  .main_banner .main_c_i { width: 222px; height: 100px; background: url(../image/images/ad1.jpg);position: absolute; right: 0;}
+
+  .main_banner_a { width: 750px; height: 230px;  margin-top: 10px; position: relative; border-bottom: 1px solid #c7cbce;}
+  .main_banner_a .a_a { width: 400px; height: 230px; background: url(../image/images/slide_main.jpg); position: absolute;}
+  .main_banner_a .a_b { width: 110px; height: 70px; background: url(../image/images/slide_1.jpg); position: absolute; right: 230px; }
+  .main_banner_a .a_b_1 { position: absolute; top:15px; right: 30px;}
+  .main_banner_a .a_c { width: 110px; height: 70px; background: url(../image/images/slide_2.jpg); position: absolute; right: 230px; top:80px;}
+  .main_banner_a .a_c_1 { position: absolute; top:95px; right: 20px;}
+  .main_banner_a .a_d { width: 110px; height: 70px; background: url(../image/images/slide_3.jpg); position: absolute; right: 230px; top:160px;}
+  .main_banner_a .a_d_1 { position: absolute; top:175px; right: 90px;}
+  .main_banner_a li { position: absolute; right: 10px; font-size: 11px;}
+
+  .main_banner_b { width: 750px; height: 170px;  position: relative; margin-top: 10px; border-bottom: 1px solid #c7cbce; }
+  .main_banner_b .store_new { font-size: 13px; position: absolute;}
+  .main_banner_b .more { background: url(../image/bobae_section/m.png); width: 35px; height: 10px; position: absolute; right: 0;}
+
+  .main_banner_b .car1 { background: url(../image/images/list_a1.jpg); width: 136px; height: 102px; position: absolute; top:20px; }
+  .main_banner_b .infor1 { position: absolute; top:132px; left:30px; font-size: 12px;}
+  .main_banner_b .car2 { background: url(../image/images/list_a2.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:153px; }
+  .main_banner_b .infor2 { position: absolute; top:132px; left:30px; font-size: 12px; left:170px;}
+  .main_banner_b .car3 { background: url(../image/images/list_a3.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:306px;}
+  .main_banner_b .infor3 { position: absolute; top:132px; left:30px; font-size: 12px; left: 323px;}
+  .main_banner_b .car4 { background: url(../image/images/list_a4.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:460px;}
+  .main_banner_b .infor4 { position: absolute; top:132px; left:30px; font-size: 12px; left: 477px;}
+  .main_banner_b .car5 { background: url(../image/images/list_a5.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:614px;}
+  .main_banner_b .infor5 { position: absolute; top:132px; left:30px; font-size: 12px; left: 630px;}
+
+  .main_banner_c { width: 750px; height: 170px;  position: relative; margin-top: 10px; border-bottom: 1px solid #c7cbce; }
+  .main_banner_c .store_new_a { font-size: 13px; position: absolute;}
+  .main_banner_c .more { background: url(../image/bobae_section/m.png); width: 35px; height: 10px; position: absolute; right: 0;}
+
+  .main_banner_c .car6 { background: url(../image/images/list_b1.jpg); width: 136px; height: 102px; position: absolute; top:20px; }
+  .main_banner_c .infor6 { position: absolute; top:132px; left:30px; font-size: 12px;}
+  .main_banner_c .car7 { background: url(../image/images/list_b2.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:153px; }
+  .main_banner_c .infor7 { position: absolute; top:132px; left:30px; font-size: 12px; left:170px;}
+  .main_banner_c .car8 { background: url(../image/images/list_b3.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:306px;}
+  .main_banner_c .infor8 { position: absolute; top:132px; left:30px; font-size: 12px; left: 323px;}
+  .main_banner_c .car9 { background: url(../image/images/list_b4.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:460px;}
+  .main_banner_c .infor9 { position: absolute; top:132px; left:30px; font-size: 12px; left: 477px;}
+  .main_banner_c .car10 { background: url(../image/images/list_b5.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:614px;}
+  .main_banner_c .infor10 { position: absolute; top:132px; left:30px; font-size: 12px; left: 630px;}
+
+  .main_banner_d { width: 750px; height: 170px;  position: relative; margin-top: 10px; border-bottom: 1px solid #c7cbce; }
+  .main_banner_d .store_new_b { font-size: 13px; position: absolute;}
+  .main_banner_d .more { background: url(../image/bobae_section/m.png); width: 35px; height: 10px; position: absolute; right: 0;}
+
+  .main_banner_d .car11 { background: url(../image/images/list_c1.jpg); width: 136px; height: 102px; position: absolute; top:20px; }
+  .main_banner_d .infor11 { position: absolute; top:132px; left:30px; font-size: 12px;}
+  .main_banner_d .car12 { background: url(../image/images/list_c2.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:153px; }
+  .main_banner_d .infor12 { position: absolute; top:132px; left:30px; font-size: 12px; left:170px;}
+  .main_banner_d .car13 { background: url(../image/images/list_c3.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:306px;}
+  .main_banner_d .infor13 { position: absolute; top:132px; left:30px; font-size: 12px; left: 323px;}
+  .main_banner_d .car14 { background: url(../image/images/list_c4.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:460px;}
+  .main_banner_d .infor14 { position: absolute; top:132px; left:30px; font-size: 12px; left: 477px;}
+  .main_banner_d .car15 { background: url(../image/images/list_c5.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:614px;}
+  .main_banner_d .infor15 { position: absolute; top:132px; left:30px; font-size: 12px; left: 630px;}
+
+  .main_banner_e { width: 750px; height: 170px;  position: relative; margin-top: 10px; border-bottom: 1px solid #c7cbce; }
+  .main_banner_e .store_new_c { font-size: 13px; position: absolute;}
+  .main_banner_e .more { background: url(../image/bobae_section/m.png); width: 35px; height: 10px; position: absolute; right: 0;}
+
+  .main_banner_e .car16 { background: url(../image/images/list_d1.jpg); width: 136px; height: 102px; position: absolute; top:20px; }
+  .main_banner_e .infor16 { position: absolute; top:132px; left:30px; font-size: 12px;}
+  .main_banner_e .car17 { background: url(../image/images/list_d2.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:153px; }
+  .main_banner_e .infor17 { position: absolute; top:132px; left:30px; font-size: 12px; left:170px;}
+  .main_banner_e .car18 { background: url(../image/images/list_d3.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:306px;}
+  .main_banner_e .infor18 { position: absolute; top:132px; left:30px; font-size: 12px; left: 323px;}
+  .main_banner_e .car19 { background: url(../image/images/list_d4.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:460px;}
+  .main_banner_e .infor19 { position: absolute; top:132px; left:30px; font-size: 12px; left: 477px;}
+  .main_banner_e .car20 { background: url(../image/images/list_d5.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:614px;}
+  .main_banner_e .infor20 { position: absolute; top:132px; left:30px; font-size: 12px; left: 630px;}
+
+  .main_banner_f { width: 750px; height: 170px;  position: relative; margin-top: 10px; border-bottom: 1px solid #c7cbce; }
+  .main_banner_f .store_new_d { font-size: 13px; position: absolute;}
+  .main_banner_f .more { background: url(../image/bobae_section/m.png); width: 35px; height: 10px; position: absolute; right: 0;}
+
+  .main_banner_f .car21 { background: url(../image/images/list_e1.jpg); width: 136px; height: 102px; position: absolute; top:20px; }
+  .main_banner_f .infor21 { position: absolute; top:132px; left:30px; font-size: 12px;}
+  .main_banner_f .car22 { background: url(../image/images/list_e2.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:153px; }
+  .main_banner_f .infor22 { position: absolute; top:132px; left:30px; font-size: 12px; left:170px;}
+  .main_banner_f .car23 { background: url(../image/images/list_e3.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:306px;}
+  .main_banner_f .infor23 { position: absolute; top:132px; left:30px; font-size: 12px; left: 323px;}
+  .main_banner_f .car24 { background: url(../image/images/list_e4.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:460px;}
+  .main_banner_f .infor24 { position: absolute; top:132px; left:30px; font-size: 12px; left: 477px;}
+  .main_banner_f .car25 { background: url(../image/images/list_e5.jpg); width: 136px; height: 102px; position: absolute; top:20px; left:614px;}
+  .main_banner_f .infor25 { position: absolute; top:132px; left:30px; font-size: 12px; left: 630px;}
+
+  .hot_news{ width: 240px; height: 245px; background: #F00; position: absolute; right: 0;}
+
+
+
+
 
 
 
   </style>
+
 </head>
+
 <body>
-<div class="wrap">
-  <header class="top">
-    <div class="top_a">
-      <button class="star"></button>
-      <span>즐겨찾기</span>
-      <button class="ten"></button>
-      <span>기아 K5 하이브리드 (12년식)</span>
-      <div class="login">
-        <span>로그인</span>
-        <span>회원가입</span>
-        <span>마이페이지</span>
-        <button class="my_button"></button>
-        <span>쪽지</span>
-        <span>찜한차량</span>
-        <span>고객센터</span>
-        <span>전체메뉴</span>
-        <button class="my_button"></button>
-        <button class="mobile_icon"></button>
-        <span>모바일</span>
-      </div>
+
+    <!--util 시작-->
+    <div class="util">
+    	<div class="inner">
+            <div class="util_left">
+                <div class="star"></div>
+                <span>즐겨찾기</span>
+                <div class="tn"></div>
+                <span>기아 K5 하이브리드 (12년식)</span>
+            </div>
+            <div class="util_right">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                    <div class="mi"></div>
+                    <li><a href="#">쪽지</a></li>
+                    <li><a href="#">찜한차량</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">전체메뉴</a></li>
+                    <div class="mi"></div>
+                    <div class="bi"></div>
+                    <li><a href="#">모바일</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="top_b">
-      <span></span>
+    <!--util 끝-->
+
+	<!-- wrap 시작 -->
+	<div id="wrap">
+
+    	<header>
+        <!--hta 시작-->
+        <div class="hta">
+            <h1><a href="#">보배드림</a></h1>
+            <div class="search">
+            	<div class="search_bn"></div>
+            	<input type="text" class="search_a">
+              <input type="submit" value="" class="search_b">
+            </div>
+            <div class="top_banner">
+              <div class="top_banner_a"></div>
+              <div class="top_banner_b"></div>
+              <input type="submit" class="top_banner_c" value="">
+            </div>
+            <div class="quick_menu">
+            	<ul>
+                	<li><a href="#">인기중고차</a></li>
+                  <li><a href="#">오토바이</a></li>
+                  <li><a href="#">용품장터</a></li>
+                  <li><a href="#">협력업체</a></li>
+                  <li><a href="#">이벤트</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--hta 끝-->
+        <!--gnb 시작-->
+        <div class="gnb">
+            <ul>
+               <li class="depth1">
+                    <h2><a href="#">사이버매장</a></h2>
+                      <ul class="depth2">
+                        <li><a href="#">국산차매장</a></li>&#124;
+                        <li><a href="#">수입차매장</a></li>
+                        <li><a href="#">승용차매장</a></li>
+                        <li><a href="#">스포츠카매장</a></li>
+                        <li><a href="#">4륜/suv매장</a></li>
+                        <li><a href="#">밴/승합차매장</a></li>
+                        <li><a href="#">튜닝카매장</a></li>
+                        <li><a href="#">올드카매장</a></li>
+                        <li><a href="#">오토갤러리매장</a></li>
+                        <ul class="visit">
+                         <li>오늘방문</li>
+                         <li class="nm"><strong>981,478</strong></li>
+                         <li>어제방문</li>
+                         <li class="nm"><strong>981,478</strong></li>
+                        </ul>
+                      </ul>
+                </li>
+                <li class="depth1">
+                    <h2><a href="#">국산중고차</a></h2>
+                </li>
+                <li class="depth1">
+                    <h2><a href="#">수입중고차</a></h2>
+                </li>
+                <li class="depth1">
+                    <h2><a href="#">내차팔기</a></h2>
+                </li>
+                <li class="depth1">
+                    <h2><a href="#">커뮤니티</a></h2>
+                </li>
+                <li class="depth1">
+                    <h2><a href="#">더보기</a></h2>
+                </li>
+            </ul>
+            <div class=""></div>
+        </div>
+        <!--gnb 끝-->
+        </header>
+
+        <section>
+          <!-- htb 시작 -->
+          <div class="htb">
+            <div class="main_banner">
+              <div class="main_b_i"></div>
+              <div class="main_c_i"></div>
+            </div>
+            <div class="main_banner_a">
+              <div class="a_a"></div>
+              <div class="a_b"></div>
+              <ul>
+                <li class="a_b_1"><strong>국산중고차 특종매물</strong></br>
+                1988 현대 스텔라 1.5 88형 GLX</br>
+                극 희소. 1988년 올림픽 공식모델!!</li>
+              </ul>
+              <div class="a_c"></div>
+              <ul>
+                <li class="a_c_1"><strong>수입중고차 특종매물</strong></br>
+                2012 람보르기니 가야르도 LP560-4</br>
+                11.8ch -> 200KM 람보르기니!!</li>
+              </ul>
+              <div class="a_d"></div>
+              <ul>
+                <li class="a_d_1"><strong>오토바이 특종매물</strong></br>
+                2011 브램모 엠펄스 H</br>
+                공인연비 1L -> 16.km</li>
+              </ul>
+              <div class="hot_news">
+                <div class="cumu">커뮤니티 핫이슈</div>
+                <div class="left_a"></div>
+                <div class="center_a"></div>
+                <div class="right_a"></div>
+
+                <div class="num_1"></div>
+                  <ul>
+                    <li class="gg">길가에 멈춰선 차량</br>
+                    돕는 훈훈한 모습</li>
+                  </ul>
+                  <div class="zz"></div>
+
+                </div>
+            </div>
+            <div class="main_banner_b">
+              <div class="store_new">사이버매장 신규매물</div>
+              <input type="submit" class="more" value="">
+              <div class="car1"></div>
+              <div class="infor1">BMW 1M 쿠페</br>&nbsp;&nbsp;2001년식</div>
+              <div class="car2"></div>
+              <div class="infor2">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car3"></div>
+              <div class="infor3">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car4"></div>
+              <div class="infor4">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car5"></div>
+              <div class="infor5">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+            </div>
+
+            <div class="main_banner_c">
+              <div class="store_new_a">국산중고차 신규매물</div>
+              <input type="submit" class="more" value="">
+              <div class="car6"></div>
+              <div class="infor6">BMW 1M 쿠페</br>&nbsp;&nbsp;2001년식</div>
+              <div class="car7"></div>
+              <div class="infor7">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car8"></div>
+              <div class="infor8">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car9"></div>
+              <div class="infor9">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car10"></div>
+              <div class="infor10">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+            </div>
+
+            <div class="main_banner_d">
+              <div class="store_new_b">수입중고차 신규매물</div>
+              <input type="submit" class="more" value="">
+              <div class="car11"></div>
+              <div class="infor11">BMW 1M 쿠페</br>&nbsp;&nbsp;2001년식</div>
+              <div class="car12"></div>
+              <div class="infor12">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car13"></div>
+              <div class="infor13">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car14"></div>
+              <div class="infor14">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car15"></div>
+              <div class="infor15">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+            </div>
+
+            <div class="main_banner_e">
+              <div class="store_new_c">오토바이 신규매물</div>
+              <input type="submit" class="more" value="">
+              <div class="car16"></div>
+              <div class="infor16">BMW 1M 쿠페</br>&nbsp;&nbsp;2001년식</div>
+              <div class="car17"></div>
+              <div class="infor17">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car18"></div>
+              <div class="infor18">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car19"></div>
+              <div class="infor19">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car20"></div>
+              <div class="infor20">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+            </div>
+
+            <div class="main_banner_f">
+              <div class="store_new_d">협력업체</div>
+              <input type="submit" class="more" value="">
+              <div class="car21"></div>
+              <div class="infor21">BMW 1M 쿠페</br>&nbsp;&nbsp;2001년식</div>
+              <div class="car22"></div>
+              <div class="infor22">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car23"></div>
+              <div class="infor23">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car24"></div>
+              <div class="infor24">렉서스 뉴 ES300H</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+              <div class="car25"></div>
+              <div class="infor25">람보르기니 가야르도</br>&nbsp;&nbsp;&nbsp;&nbsp;2001년식</div>
+            </div>
+          </div>
+
+          <div class="login">
+
+
+
+            </div>
+
+          <!-- htb 끝 -->
+          </section>
+
     </div>
-  </header>
-</div>
+	<!-- //wrap 끝 -->
 
-
-  <section>
-
-  </section>
-</div>
 </body>
 </html>
