@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /*reset*/
+        *{margin:0; padding:0;}
+        ol,ul{list-style:none;}
+        body{font-size:12px;}
+        a{text-decoration:none; color:#000;}
+        button,
+        input[type="button"],
+        input[type="submit"],
+        input[type="reset"]
+        {cursor:pointer;}
+        img{vertical-align:top;}
+        input{vertical-align:middle;}
+        fieldset{border:0;}
+
+
+        /*option*/
+        .fl{float:left;}
+        .fr{float:right;}
+        i.icon-select{
+            margin-left:3px;
+            background-image: url(../images/bobea/icon_open.png);
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 12px;
+            display:inline-block;
+            vertical-align:-3px;
+        }
+        i.icon-mobile{
+            margin-right:3px;
+            background-image: url(../images/bobea/icon_mobile.png);
+            background-repeat: no-repeat;
+            width: 8px;
+            height: 12px;
+            display:inline-block;
+            vertical-align:-3px;
+        }
+        .ir{
+            text-indent:-9999px;
+            font-size:0;
+            position:absolute;
+            left:-9999px;
+            top:-9999px;
+        }
+
+        /*layout*/
+        .heading{
+            height:30px;
+            background-color:#f8f8f8;
+            border-bottom:1px #d5d0cc solid;
+        }
+        .heading .gnb{
+            width: 990px;
+            height: 30px;
+            line-height:30px;
+            border:1px #F00 solid;
+            margin:0 auto;
+        }
+
+        .gnb a.book_mark{
+            font-size:11px;
+            padding-left:13px;
+            background-image: url(../images/bobea/icon_star.png);
+            background-repeat: no-repeat;
+            background-position: 0 10px;
+         }
+
+
+        .gnb .rank{margin-left:14px;}
+        .gnb .rank li{
+            display:none;
+            font-size:11px;
+            padding-left:20px;
+            background-image: url(../images/bobea/icon_num.png);
+            background-repeat: no-repeat;
+            background-position: 0 10px;
+        }
+
+        .gnb .rank li .up_icon{
+            padding-left:8px;
+            background-image: url(../images/bobea/icon_up.png);
+            background-repeat: no-repeat;
+            background-position: 0 ;
+            font-style:normal;
+        }
+        .gnb .rank .on{display:block;}
+        .gnb .rank i[class^="up_"]{color:red;}
+        .gnb .rank i[class^="down_"]{color:blue;}
+
+        .gnb .global_menu li{
+            float:left;
+            padding:0 8px 0 7px;
+            background-image: url(../images/bobea/top_horizon.png);
+            background-repeat: no-repeat;
+            background-position: 0 10px;
+        }
+        .gnb .global_menu li strong{
+            color:blue;
+        }
+        .gnb .global_menu li:first-child{
+            background:none;
+        }
+
+
+        /*lnb*/
+        .lnb {height:107px; border:1px #F00 solid; width:990px; margin:0 auto;}
+        .lnb .logo{width:105px;height: 27px;border:1px #F00 solid; position:relative; top:34px;}
+        .lnb .promotion{width: 244px;height: 90px;border:1px #F00 solid;position:relative; top:7px;}
+        .lnb .search{width:280px; height:79px;background: #ccc; margin:0 auto; position:relative; top:16px;}
+        .lnb .search input[type="text"]{height:21px;border:2px #3b5999 solid; width: 218px; padding: 0 10px;}
+        .lnb .search input[type="submit"]{height:25px; width:38px; border:0 none;  font-size:0; text-indent:-9999px; background:#3b5999 url(../images/bobea/icon_search.png) no-repeat center center;}
+        .lnb .submenu{position:relative; }
+        .lnb .submenu li{float:left;}
+        .lnb .submenu li:first-child img{padding-left:0; background-images:none;}
+        .lnb .submenu li img{
+            padding:0 7px 0 8px;
+            background-image: url(../images/bobea/lnb_horizon.png);
+            background-repeat: no-repeat;
+        }
+        .nav{width:990px; height:76px; margin:0 auto; border-bottom:1px #F00 solid;}
+        .nav>ul{height:38px; background-color: #CCC;}
+        .nav>ul>li{float:left; line-height:38px;font-size:14px; font-weight:bold;}
+        .nav>ul>li:hover{background: #EEE;}
+        /*.nav>ul>li:hover ul{display:block;}*/
+        .nav>ul>li>a{display:block;padding:0 11px; }
+        .nav ul ul{position:absolute; display:none;}
+        .nav li.on ul{display:block;}
+        .nav ul ul li{float:left;margin:0 10px;}
+    </style>
+</head>
+<body>
+
+
+    <!-- gnb -->
+
+    <div class="heading">
+        <div class="gnb">
+            <div class="site_option fl">
+
+                <a href="" class="fl book_mark">즐겨찾기</a>
+
+                <ol class="fl rank">
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li><a href="">기아k5 출시</a></li>
+                    <li class="on"><a href="">기아k5 출시 sfsfsfsfsdf <i class="up_icon">45</i></a></li>
+                </ol>
+
+            </div>
+            <div class="global_menu fr">
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">마이페이지<i class="icon-select"></i></a></li>
+                    <li><a href="">쪽지<strong>1</strong></a></li>
+                    <li><a href="">찜한차량<strong>1</strong></a></li>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">전체매뉴<i class="icon-select"></i></a></li>
+                    <li><a href=""><i class="icon-mobile"></i>모바일</a></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="lnb">
+        <div class="logo  fl"><h1>로고</h1></div>
+        <div class="promotion fr">베너</div>
+        <div class="search">
+            <div><img src="../images/bobea/top_banner.png" alt=""></div>
+            <fieldset>
+                <legend class="ir">검색</legend>
+                <input type="text"><input type="submit" value="검색">
+            </fieldset>
+        </div>
+        <div class="submenu">
+            <ul>
+                <li><a href=""><img src="../images/bobea/lnb_title_1.png" alt=""></a></li>
+                <li><a href=""><img src="../images/bobea/lnb_title_2.png" alt=""></a></li>
+                <li><a href=""><img src="../images/bobea/lnb_title_3.png" alt=""></a></li>
+                <li><a href=""><img src="../images/bobea/lnb_title_4.png" alt=""></a></li>
+                <li><a href=""><img src="../images/bobea/lnb_title_5.png" alt=""></a></li>
+            </ul>
+
+
+
+        </div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li class="on"><a href="">인기중고차</a>
+                <ul>
+                    <li><a href="">text1</a></li>
+                    <li><a href="">text2</a></li>
+                    <li><a href="">text3</a></li>
+                    <li><a href="">text4</a></li>
+                    <li><a href="">text5</a></li>
+                    <li><a href="">text6</a></li>
+                </ul>
+            </li>
+            <li><a href="">text</a>
+                <ul>
+                    <li><a href="">text1</a></li>
+                    <li><a href="">text2</a></li>
+                    <li><a href="">text3</a></li>
+                    <li><a href="">text4</a></li>
+                    <li><a href="">text5</a></li>
+                    <li><a href="">text6</a></li>
+                </ul>
+            </li>
+            <li><a href="">text</a>
+                <ul>
+                    <li><a href="">text1</a></li>
+                    <li><a href="">text2</a></li>
+                    <li><a href="">text3</a></li>
+                    <li><a href="">text4</a></li>
+                    <li><a href="">text5</a></li>
+                    <li><a href="">text6</a></li>
+                </ul>
+            </li>
+            <li><a href="">text</a>
+                <ul>
+                    <li><a href="">text1</a></li>
+                    <li><a href="">text2</a></li>
+                    <li><a href="">text3</a></li>
+                    <li><a href="">text4</a></li>
+                    <li><a href="">text5</a></li>
+                    <li><a href="">text6</a></li>
+                </ul>
+            </li>
+            <li><a href="">text</a>
+                <ul>
+                    <li><a href="">text1</a></li>
+                    <li><a href="">text2</a></li>
+                    <li><a href="">text3</a></li>
+                    <li><a href="">text4</a></li>
+                    <li><a href="">text5</a></li>
+                    <li><a href="">text6</a></li>
+                </ul>
+            </li>
+            <li><a href="">text</a>
+                <ul>
+                    <li><a href="">text1</a></li>
+                    <li><a href="">text2</a></li>
+                    <li><a href="">text3</a></li>
+                    <li><a href="">text4</a></li>
+                    <li><a href="">text5</a></li>
+                    <li><a href="">text6</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
