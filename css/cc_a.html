@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    /*reset*/
+    *{margin:0;padding:0;}
+    body{font-size:12px;}
+    ul,ol,dl,li{list-style:none;}
+    img{vertical-align:top; border:0;}
+    fieldset{border:0;}
+    legend{font-size:0;text-indent:-9999px;}
+    input,botton{vertical-align:middle;}
+    a{text-decoration:none; color:#373737;}
+    i,em,cite{font-style:normal;}
+
+    /*option*/
+    .fl{float:left;}
+    .fr{float:right;}
+
+
+    /*icon*/
+    .icon_bookmark{
+        padding-left:13px;
+        background-image: url(../images/bobea/icon_star.png);
+        background-repeat: no-repeat;
+        background-position: 0 4px;
+    }
+
+    .icon-uparrow{
+        padding-left:8px;
+        background-image: url(../images/bobea/icon_up.png);
+        background-repeat: no-repeat;
+        background-position: 0 4px;
+    }
+
+    /*layout*/
+    .header{
+        border-bottom:1px #d5d0cc solid;
+        height:30px;
+        background-color: #f8f8f8;
+    }
+    .gnb{
+        outline:1px #d5d0cc solid;
+        width: 990px;
+        height:31px;
+        margin:0 auto;
+        line-height:30px;
+    }
+    .gnb .site_option div{
+        float:left;
+    }
+    .gnb .site_option div:first-child{
+        margin-right:13px;
+    }
+
+    .gnb .site_option div.rank li{
+        padding-left:19px;
+        background-image: url(../images/bobea/icon_num10.png);
+        background-repeat: no-repeat;
+        background-position: 0 10px;
+    }
+    .gnb .site_option div.rank li i{
+        font-size:11px;
+        margin-left:8px;
+    }
+    .gnb .global_menu ul{
+        font-size:0;
+    }
+    .gnb .global_menu li{
+        display: inline-block;
+        font-size:12px;
+        vertical-align:middle;
+
+    }
+    .gnb .global_menu li:before{
+        content:"";
+        border-left:1px #d1d1d1 solid;
+        height:11px;
+        display: inline-block;
+        margin:0 7px 0 8px;
+        vertical-align:middle;
+
+    }
+    .gnb .global_menu li:first-child:before{
+        content:"";
+        border:0;
+        margin:0;
+    }
+
+    .lnb{
+        height:107px;
+        outline:1px #F00 solid;
+        margin:0 auto;
+        width: 990px;
+    }
+
+    .lnb .logo{
+
+        position:relative;
+        top:34px;
+    }
+    .lnb .banner{
+
+        position:relative;
+        top:13px;
+
+    }
+    .lnb .search{
+        height:73px;
+
+        width:280px;
+        margin:0 auto;
+        position:relative;
+        top:19px;
+    }
+    .lnb .search input[type="text"]{
+        width:237px;
+        height:23px;
+        border:2px #3b5999 solid
+    }
+    .lnb .search input[type="submit"]{
+        height:27px;
+        width:38px;
+        font-size:0;
+        text-indent:-9999px;
+        border:0;
+        background-color: #3b5999;
+        background-image: url(../images/bobea/icon_zoom2.png);
+        background-repeat: no-repeat;
+    }
+    .top_submenu ul{
+        font-size:0;
+    }
+    .top_submenu li{
+        font-size:14px;
+        display:inline-block;
+        margin:0 5px;
+    }
+    .top_submenu li:first-child{
+        margin-left:0;
+    }
+
+
+    .main_menu{
+        width: 990px;
+        border:1px #F00 solid;
+        height: 76px;
+        margin:0 auto;
+        position:relative;
+    }
+    .main_menu ul{
+     height:39px;
+
+
+    }
+    .main_menu>ul{
+        background-color: #3b5999;
+    }
+    .main_menu>ul>li{
+        float:left;
+        line-height:39px;
+    }
+    .main_menu>ul>li>a{
+
+        display:block;
+        color:#FFF;
+        font-size:15px;
+        padding:0 10px;
+    }
+    .main_menu>ul>li>a:hover{
+        background-color: #5785f2;
+    }
+    .main_menu>ul>li ul{
+        position:absolute;
+        left:0;
+    }
+    .main_menu>ul>li li{
+        margin:0 10px;
+        float:left;
+    }
+
+    .main_menu .information{
+        border:1px #F00 solid;
+        min-width:200px;
+        position:absolute;
+        right:0;
+        top:0;
+    }
+    .main_menu .notice{line-height:37px;}
+    .main_menu .notice h2{font-size:11px; color:#FFF;  float:left; padding-right:9px; margin-right:7px;}
+    .main_menu .notice span{color:#FFF;}
+
+    .main_menu .intoday div{float:left; line-height:37px;}
+    .main_menu .intoday div:first-child{margin-right:10px;}
+    .main_menu .intoday div span:first-child+span{color:#005dde;margin-left:10px;font-weight:bold;}
+    .container{width:990px; border:1px #F00 solid; margin:5px auto 0;}
+    .container .section{
+        width:748px;
+        outline:1px #F00 solid;
+        float:left;
+    }
+    .container .section .sec-line{
+        height:102px;
+        border-bottom:11px;
+    }
+    .container .section .sec-line div{
+        border:1px #c7cbce solid;
+    }
+
+    .container .section .sec-hotlist{
+        margin-top:11px;
+        height:232px;
+    }
+    .container .section .sec-hotlist .main_banner{
+        float:left;
+        width:400px;
+        height:230px;
+        border:1px #c7cbce solid;
+        position:relative;
+    }
+
+    .container .section .sec-hotlist .main_banner~li {margin-left:408px; border-top:1px #e4e6e5 solid; height:79px;}
+    .container .section .sec-hotlist .main_banner~li img{border:1px #CCC solid; float:left; margin-right:13px;}
+    .container .section .sec-hotlist .main_banner~li strong{display:block; padding-top:13px;}
+    .container .section .sec-hotlist .main_banner~li {margin-right:15px;}
+    .container .section .sec-hotlist .main_banner+li{border-top:0 none; height:76px;}
+    .container .section .sec-hotlist .main_banner+li~li img{margin-top:3px;}
+
+
+
+
+    .container .section .sec-hotlist .main_banner .descrip{
+        position:absolute;
+
+        bottom:0; left:0; right:0; height:44px;
+        background-color:rgba(0,0,0,.8);
+        color:#FFF;
+
+    }
+    .container .section .sec-hotlist .main_banner .descrip>div{
+        margin:5px;
+    }
+    .container .section .sec-hotlist .main_banner .descrip strong{
+        font-size:14px;
+        display:block;
+    }
+
+    .container .section .sec-hotlist .main_banner .descrip cite{
+        font-size:12px;
+        font-style:normal;
+    }
+    .container .section .sec-hotlist .main_banner .btngroup{
+        text-align:center;
+
+        position:absolute;
+        right:0; top:0;
+        font-size:0;
+    }
+    .container .section .sec-hotlist .main_banner .btngroup span{
+        font-size:12px;
+    }
+    .container .section .sec-hotlist .main_banner .btngroup .number:after{
+        content:"/";
+        margin:0 5px;
+    }
+
+    .container .section .sec-hotlist .main_banner .btngroup input[type="button"]{
+        border:0;
+        width:17px;
+        height:17px;
+        text-indent:-9999px;
+        background-image:url(../images/bobea/icon_left_right.png);
+    }
+    .container .section .sec-hotlist .main_banner .btngroup input[value="이전"]{
+        background-position: -17px 0;
+        cursor:pointer;
+    }
+
+    .container .section .grid-lists{
+        margin-top:10px;
+        padding-top:13px;
+        border-top:1px #CCC solid;
+    }
+    .container .section .grid-lists{width:734px;}
+    .container .section .grid-lists h2{font-size:15px; margin-bottom:10px;}
+    .container .section .grid-lists div{overflow:hidden;}
+    .container .section .grid-lists ul{overflow:hidden;}
+    .container .section .grid-lists  li{float:left; text-align:center; margin-left:11px;}
+    .container .section .grid-lists  li:first-child{margin-left:0;}
+    .container .section .grid-lists  li cite{display:block;}
+    .container .section .grid-lists  li img{border:1px #CCC solid;}
+
+    .aside{margin-left:753px;}
+    .aside .login {background-color: #f6f6f6;}
+    .aside .login fieldset{padding:12px;}
+    .aside .login fieldset input[type="text"],
+    .aside .login fieldset input[type="password"]{width:149px;height:26px;border:1px #333 solid; float:left;}
+    .aside .login fieldset input[type="password"]{border-top-color:#CCC;}
+    .aside .login fieldset input[type="text"]{border-bottom:0;}
+    .aside .login fieldset input[type="submit"]{
+        margin-left:5px;
+        width: 54px;
+        height: 54px;
+        border:1px #a7abb3 solid;
+    }
+    .aside .login fieldset .login_option{clear:both;margin-top:10px;}
+
+    .aside .hotnews{
+        height:254px;
+        outline:1px #F00 solid;
+    }
+    .aside .title_group{
+        overflow:hidden;
+        outline:1px #F00 solid;
+    }
+    .aside .title_group .count:after{
+        content:"/";
+        margin:0 5px;
+    }
+    .aside .title_group .next{
+        position:relative;
+        left:67px;
+    }
+    .aside .title_group .prev{
+        position:relative;
+        right:67px;
+    }
+
+    .number-list{padding:12px;}
+    .number-list li{height:73px; border-top:1px #CCC solid; }
+    .number-list li:first-child{border-top:0;}
+    .number-list li img{float:right;}
+    .number-list li span{
+
+        background-repeat:no-repeat;
+        padding-left:14px;
+        display:block;
+        background-position:0 3px;
+
+    }
+
+    .number-list li:nth-child(1) span{
+         background-image:url(../images/bobea/icon_num1.png);
+    }
+    .number-list li:nth-child(2) span{
+         background-image:url(../images/bobea/icon_num2.png);
+    }
+    .number-list li:nth-child(3) span{
+         background-image:url(../images/bobea/icon_num3.png);
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="gnb">
+            <div class="site_option fl">
+                <div><a href="" class="icon_bookmark">즐겨찾기</a></div>
+                <div class="rank">
+                    <ol>
+                        <li><a href="">기아k5 하이브리드 신차출<i class="icon-uparrow">41</i></a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="global_menu fr">
+                <ul>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">회원가입</a></li>
+                    <li><a href="">마이페이지</a></li>
+                    <li><a href="">쪽지</a></li>
+                    <li><a href="">찜한차량</a></li>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">전체매뉴</a></li>
+                    <li><a href="">모바일</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="lnb">
+
+            <div class="logo fl">
+                <h1><a href=""><img src="../images/bobea/logo.png" alt="보배드림"></a></h1>
+            </div>
+            <div class="banner fr">
+                <a href="">
+                    <img src="../images/bobea/banner_top_right.png" alt="">
+                </a>
+            </div>
+            <div class="search">
+
+                <a href=""><img src="../images/bobea/banner_top.png" alt=""></a>
+                <fieldset>
+                    <legend>검색</legend>
+                    <input type="text" /><input  type="submit" value="검색" />
+                </fieldset>
+
+
+            </div>
+            <div class="top_submenu">
+                <ul>
+                    <li><a href="">인기중고차</a></li>
+                    <li><a href="">오토바이</a></li>
+                    <li><a href="">용품장터</a></li>
+                    <li><a href="">협력업체</a></li>
+                    <li><a href="">이벤트</a></li>
+                </ul>
+            </div>
+
+        </div>
+    <div class="main_menu">
+
+        <ul>
+            <li><a href="">사이버매장</a>
+                <div>
+                    <ul>
+                        <li><a href="">국산차매장</a></a></li>
+                        <li><a href="">수입차매장</a></li>
+                        <li><a href="">승용차매장</a></li>
+                        <li><a href="">스포츠카매장</a></li>
+                        <li><a href="">4륜/RV매장</a></li>
+                        <li><a href="">밴/승합차매장</a></li>
+                        <li><a href="">튜닝카매장</a></li>
+                        <li><a href="">올드카매장</a></li>
+                        <li><a href="">오토갤러리매장</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">국산차매장</a></li>
+            <li><a href="">수입차매장</a></li>
+            <li><a href="">내차팔기</a></li>
+            <li><a href="">커뮤니티</a></li>
+            <li><a href="">더보기</a></li>
+        </ul>
+
+        <div class="information">
+            <div class="notice">
+                <h2>공지</h2>
+                <span>보배드림 어플리케이션 안내</span>
+            </div>
+            <div class="intoday">
+                <div  class="today">
+                    <span>오늘방문</span><span>5,542</span>
+                </div>
+                <div class="yesday">
+                    <span>어제방문</span><span>54,154</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="sec-line">
+                <div class="fl"><img src="../images/bobea/car_left1.png" alt=""></div>
+                <div class="fr"><img src="../images/bobea/partytime.png" alt=""></div>
+            </div>
+            <div class="sec-hotlist">
+                <div class="newcar-list">
+                    <ul>
+                        <li class="main_banner">
+                            <span>
+                                <img src="../images/bobea/car_left2.png" alt="">
+                            </span>
+                            <div class="descrip">
+                                <div>
+                                    <strong>사이버매장특종매물</strong>
+                                    <cite>2013 아우디 R8 5.2 V10 스파이더</cite>
+                                </div>
+                                <div class="btngroup">
+                                    <div class="count">
+                                        <span class="number">1</span><span>3</span>
+                                    </div>
+                                    <input type="button" value="다음">
+                                    <input type="button" value="이전">
+                                </div>
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../images/bobea/car_left3.png" alt="">
+                                <strong>사이버매장특종매물</strong>
+                                <cite>1988 현대 스텔라 1.5 88형 GLX 극 희소. 1988년 올림픽 공식모델!! </cite>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../images/bobea/car_left3.png" alt="">
+                                <strong>사이버매장특종매물</strong>
+                                <cite>1988 현대 스텔라 1.5 88형 GLX 극 희소. 1988년 올림픽 공식모델!!</cite>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../images/bobea/car_left3.png" alt="">
+                                <strong>사이버매장특종매물</strong>
+                                <cite>2013 아우디 R8 5.2 V10 스파이더</cite>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-lists">
+                <div>
+                    <h2 class="fl">사이버매장 신규매물</h2>
+                    <a href="" class="fr">더보기</a>
+                </div>
+                 <div>
+                     <ul>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                     </ul>
+                 </div>
+
+            </div>
+            <div class="grid-lists">
+                <div>
+                    <h2 class="fl">사이버매장 신규매물</h2>
+                    <a href="" class="fr">더보기</a>
+                </div>
+                 <div>
+                     <ul>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                     </ul>
+                 </div>
+
+            </div>
+            <div class="grid-lists">
+                <div>
+                    <h2 class="fl">사이버매장 신규매물</h2>
+                    <a href="" class="fr">더보기</a>
+                </div>
+                 <div>
+                     <ul>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                     </ul>
+                 </div>
+
+            </div>
+            <div class="grid-lists">
+                <div>
+                    <h2 class="fl">사이버매장 신규매물</h2>
+                    <a href="" class="fr">더보기</a>
+                </div>
+                 <div>
+                     <ul>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                         <li>
+                             <img src="../images/bobea/car_left15.png" alt="">
+                             <cite>BMW 1M 쿠페</cite>
+                             <span>2017년식</span>
+                         </li>
+                     </ul>
+                 </div>
+
+            </div>
+
+        </div>
+        <div class="aside">
+            <div class="login">
+                <fieldset>
+                    <legend>로그인</legend>
+                    <div class="login_field">
+                        <input type="text" name=""/>
+                        <input type="password" name=""/>
+                        <input type="submit" name="" value="login"/>
+                    </div>
+                    <div class="login_option">
+                        <span class="fl"><input type="checkbox" id="idsave"> <label for="idsave">ID저장 </label></span>
+                        <span class="fr"><a href="">회원가입</a> <a href="">ID/비밀번호찾기</a></span>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="hotnews">
+                <div class="title_group">
+                    <h2  class="fl">핫커뮤니티</h2>
+
+                    <div class="btngroup fr">
+
+                        <input type="button" value="다음" class="next">
+                        <span class="count">1</span><span>3</span>
+                        <input type="button" value="이전" class="prev">
+
+                    </div>
+                </div>
+                <div class="number-list">
+                    <ol>
+                        <li>
+                            <img src="../images/bobea/car_right1.png" alt="">
+                            <span>길가에 멈춰선 차량돕는 훈훈한 모습</span>
+                        </li>
+                        <li>
+                            <img src="../images/bobea/car_right1.png" alt="">
+                            <span>길가에 멈춰선 차량돕는 훈훈한 모습</span>
+                        </li>
+                        <li>
+                            <img src="../images/bobea/car_right1.png" alt="">
+                            <span>길가에 멈춰선 차량돕는 훈훈한 모습</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+</html>
