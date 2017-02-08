@@ -1,0 +1,30 @@
+// out: style.css, sourcemap: false, compress: false
+body{
+    margin: 0;
+    padding: 0;
+}
+@ww:500px;
+
+.box{
+    width: @ww;
+    float: left;
+}
+.aside{
+    margin-left: @ww;
+}
+
+.gnb{
+    border: 1px+10 solid #F00*30;
+    li{
+        border: 1px #F00 solid;
+        &:first-child{
+            border: 1px solid #FFF;
+        }
+    }
+    a{
+        text-decoration: none;
+        &:hover{
+            color: red;
+        }
+    }
+}
