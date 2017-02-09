@@ -1,5 +1,6 @@
 // out: style.css, sourcemap: false, compress: true
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 @color-white:#FFF;
 @color-black:#000;
@@ -9,46 +10,132 @@
 @color-master:#DDAA09;
 @color-line:@color-sub;
 
-
-
 //reset
-body{font-family: 'Indie Flower', cursive;}
-body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,p{margin: 0; padding: 0;}
-ul,ol,li{list-style: none;}
-img{border: 0; vertical-align: top;}
+body{font-family: 'Indie Flower','Noto Sans KR',sans-serif;}
+body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,p{margin:0; padding:0;}
+ul,ol,li{list-style:none;}
+img{border:0; vertical-align: top;}
 input{vertical-align: middle;}
-a{text-decoration: none; color: @color-font;}
+a{
+  text-decoration: none;
+  color:@color-font;
+}
 
 //layout
 #header{
-    padding: 20px 50px;
-    outline: 1px solid #F00;
-    height: 80px;
-    text-align: center;
-    background-color: @color-master;
-    h1{
-        font-size: 30px;
-        font-weight: 300;
-        border-bottom: 1px @color-sub solid;
-        padding-bottom: 5px;
-        display: inline-block;
-        text-transform: capitalize;
-        a{
-            color:@color-white;
-            span{
-                font-size: 12px;
-                display: block;
-            }
-        }
+    padding:20px 50px;
+  outline:1px #F00 solid;
+  text-align: center;
+  background-color:@color-master;
+  h1{
+    font-size:30px;
+    font-weight: 300;
+    border-bottom:2px @color-white solid;
+    padding-bottom:5px;
+    display:inline-block;
+    text-transform:uppercase;
+    a{
+      color:@color-white;
+      span{
+        font-size:12px;
+        display:block;
+      }
     }
-    .blogMenu{
-        font-size: 0;
-        li{
-            font-size: 14px;
-            display: inline-block;
-            a{
-                color: @color-white;
+  }
+  .blogMenu{
+      font-size:0;
+      li{
+          font-size:14px;
+          margin:0 5px;
+          display: inline-block;
+          a{
+             color:@color-white;
+
+          }
+      }
+  }
+
+}
+#container{
+  width: 990px;
+  margin:20px auto 0;
+  border:1px #F00 solid;
+  .entry{
+    .titleWrap{
+      margin-bottom:30px;
+      h2 a{
+        font-weight: 300;
+        border-bottom:2px @color-main solid;
+      }
+    }
+    .tagTrail{
+      border:1px @color-main solid;
+      border-radius:3px;
+      margin:35px 0 0;
+      padding:10px 20px;
+      position:relative;
+      .tagText{
+        border-radius:3px 3px 0 0 ;
+        margin-left:20px;
+        position:absolute;
+        left:0;
+        top:-30px;
+        height:30px;
+        padding:0 15px;
+        background-color: @color-sub;
+        color:@color-white;
+      }
+      a{
+       font-size:12px;
+       color:@color-white;
+       background-color:@color-main;
+       padding:0 10px;
+       border-radius:3px;
+      }
+    }
+    .comment{
+      margin-top:30px;
+      .commentList{
+        border:1px #F00 solid;
+        >ol li{
+          margin:20px 0;
+
+        .image{
+          display: block;
+          width:50px;
+          height:50px;
+          border-radius:3px;
+          border: 3px solid @color-master;
+          overflow:hidden;
+          float: left;
+          margin-left: 10px;
+          img{
+              width: 100%;
+              }
             }
-        }
+            .control{
+                float: right;
+                a{
+                border:1px @color-main solid;
+                border-radius:4px;
+                background-color: @color-main;
+                font-size: 10px;
+            }
+            }
+          .commentWrite{
+            input[value="댓글 달기"]{
+                float: right;
+                font-size: 10px;
+            }
+          }
+      }
+
     }
 }
+}
+}
+
+
+
+
+//
