@@ -10,6 +10,8 @@
 @color-master:#DDAA09;
 @color-line:@color-sub;
 
+@layoutwidth:700px;
+
 //reset
 body{font-family: 'Indie Flower','Noto Sans KR',sans-serif;}
 body,html,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,p{margin:0; padding:0;}
@@ -57,6 +59,11 @@ a{
 
 }
 #container{
+
+    #content{
+        width:@layoutwidth;
+        float:left;
+    }
   width: 990px;
   margin:20px auto 0;
   border:1px #F00 solid;
@@ -69,7 +76,7 @@ a{
       }
     }
     .tagTrail{
-      border:1px @color-main solid;
+      border:1px @color-sub solid;
       border-radius:3px;
       margin:35px 0 0;
       padding:10px 20px;
@@ -97,45 +104,76 @@ a{
       margin-top:30px;
       .commentList{
         border:1px #F00 solid;
-        >ol li{
-          margin:20px 0;
-
+        li{
+          margin:10px 0;
+        }
+        >ol>li{
+          margin:30px 0;
+          li{
+            margin-left:68px;
+          }
+        }
         .image{
-          display: block;
+          display:block;
           width:50px;
           height:50px;
           border-radius:3px;
-          border: 3px solid @color-master;
+          border:3px @color-master solid;
           overflow:hidden;
-          float: left;
-          margin-left: 10px;
+          float:left;
+          margin-right:10px;
           img{
-              width: 100%;
-              }
-            }
-            .control{
-                float: right;
-                a{
-                border:1px @color-main solid;
-                border-radius:4px;
-                background-color: @color-main;
-                font-size: 10px;
-            }
-            }
-          .commentWrite{
-            input[value="댓글 달기"]{
-                float: right;
-                font-size: 10px;
-            }
+            width:100%;
           }
+        }
+        .control{
+            float:right;
+            +p{
+              border:1px #F00 solid;
+              overflow:hidden;
+            }
+            a{
+            font-size: 12px;
+            color: #FFF;
+            background-color: #ff0Aff;
+            padding: 0 10px;
+            border-radius: 3px;
+        }
+
+        }
+
       }
-
+      .textwrap{
+        border:1px #F00 solid;
+        margin:0 20px;
+        border-radius:3px;
+        text-align:center;
+        textarea{
+          border:0 none;
+          width:98%;
+          resize:none;
+          vertical-align:top;
+        }
+      }
     }
+    .paging{
+      text-align:center;
+      padding:20px 0;
+      a{
+        border:1px #F00 solid;
+        padding:0 5px;
+        border-radius: 3px;
+        font-size:12px;
+      }
+    }
+  }
+  #sidebar{
+      margin-left: @layoutwidth;
+      padding: 0 10px;
+      border: 1px solid #F00;
+      .blogImage {
+    position: relative;
+    bottom: 50px;
 }
+  }
 }
-}
-
-
-
-
-//
