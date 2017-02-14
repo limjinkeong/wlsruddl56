@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            border:1px #F00 solid;
+
+           /*transition:1000ms;*/
+        }
+
+        .box:hover{
+             animation: bam 10s;
+        }
+
+
+        @keyframes bam {
+            /*from { margin-left:0; }*/
+            /*to { margin-left:200px; }*/
+
+            0%{margin:0}
+            20%{margin:100px; transform:rotate(500deg); background-color: #F00;}
+            40%{margin:200px; width:200px; height:200px; background-color: #00f; border-radius:50%;}
+            60%{ margin: 0 0 0 100px; transform:rotate(-500deg);}
+            100%{margin:0;}
+
+        }
+
+
+         /*.box:hover{*/
+         /*    background-color: #f00;*/
+         /*    margin-left:50px;*/
+         /*    transform:matrix(0.586,0.8,-0.8,0.586,40,40);*/
+         /*}*/
+    </style>
+</head>
+<body>
+   <div class="box">
+
+   </div>
+
+</body>
+</html>

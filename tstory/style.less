@@ -11,7 +11,7 @@
 @color-line:@color-sub;
 
 @layoutwidth:500px;
-@sidebarwidth:200px;
+@sidebarwidth:250px;
 
 //reset
 body{font-family: 'Indie Flower','Noto Sans KR',sans-serif;}
@@ -82,15 +82,18 @@ a{
     #content{
         width:@layoutwidth;
         float:left;
-        margin: 0 10px;
+        margin: 0 20px;
     }
 
-    #sideright{
+    .sideright{
         width: @sidebarwidth;
         float: right;
-        border: 1px solid #F00;
+
+        h3{
+            border-bottom: 2px solid @color-black;
+        }
     }
-  width: 1100px;
+  width: 1090px;
   margin:20px auto 0;
 
 
@@ -124,28 +127,23 @@ a{
       }
     }
     .tagTrail{
-      border:1px @color-sub solid;
       border-radius:3px;
       margin:35px 0 0;
       padding:10px 20px;
       position:relative;
       .tagText{
-        border-radius:3px 3px 0 0 ;
         margin-left:20px;
         position:absolute;
         left:0;
-        top:-33px;
+        top:-20px;
         height:30px;
         padding:0 15px;
-        background-color: @color-sub;
         color:@color-black;
       }
       a{
-       font-size:12px;
+       font-size:13px;
        color:@color-black;
-       background-color:@color-main;
-       padding:0 10px;
-       border-radius:3px;
+       padding:0 20px;
       }
     }
     .comment{
