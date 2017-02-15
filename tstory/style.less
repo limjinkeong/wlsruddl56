@@ -10,7 +10,7 @@
 @color-master:#6BACAA;
 @color-line:@color-sub;
 
-@layoutwidth:500px;
+@layoutwidth:700px;
 @sidebarwidth:250px;
 
 //reset
@@ -29,7 +29,7 @@ a{
     padding:20px 50px;
 
   text-align: center;
-  background-color:@color-master;
+  background-color: @color-master;
   h1{
     font-size:30px;
     font-weight: 300;
@@ -82,7 +82,7 @@ a{
     #content{
         width:@layoutwidth;
         float:left;
-        margin: 0 20px;
+        margin: 0 30px 0 20px;
     }
 
     .sideright{
@@ -92,8 +92,13 @@ a{
         h3{
             border-bottom: 2px solid @color-black;
         }
+        .adminMenu a{
+            border: 1px solid #F00;
+            border-radius: 5px;
+            font-size: 20px;
+        }
     }
-  width: 1090px;
+  width: 1300px;
   margin:20px auto 0;
 
 
@@ -201,6 +206,7 @@ a{
           width:98%;
           resize:none;
           vertical-align:top;
+          height: 145px;
         }
       }
     }

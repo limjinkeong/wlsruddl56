@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="[##_desc_##]">
+  <meta name="keywords" content="레고, 시티, 뷰티">
+  <meta name="google-site-verification" content="7yDbyx6K6GDZSyIO1egagiAlmwi7WtTT2Y6Axw9DjRA" />
   <link rel="stylesheet" href="./style.css">
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
   <title>[##_title_##] :: [##_page_title_##]</title>
@@ -122,10 +126,53 @@
                 <h3>태그목록</h3>
                     <ul>
                         <s_random_tags>
-                        <li> <a href="[##_tag_link_##]" class="[##_tag_class_##]"> [##_tag_name_##]</a></li>
+                         <a href="[##_tag_link_##]" class="[##_tag_class_##]"> [##_tag_name_##]</a>,
                         </s_random_tags>
                     </ul>
             </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+              <!-- 공지사항 -->
+              <s_rct_notice>
+              <div class="notice">
+                  <ul>
+                      <s_rct_notice_rep>
+                      <li><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a> </li>
+                      </s_rct_notice_rep>
+                  </ul>
+              </div>
+              </s_rct_notice>
+          </s_sidebar_element>
+          <s_sidebar_element>
+            <!-- 관리자 메뉴 -->
+            <div class="adminMenu">
+                <ul>
+                    <h3>관리자</h3>
+                    <a href="[##_owner_url_##]">관리자</a>
+                    <a href="[##_owner_url_##]/entry/post">글쓰기</a>
+                </ul>
+            </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+              <!-- 배너모듈 - 태터툴즈 -->
+              <div class="botton">
+                  <a href="http://www.tattertools.com" onclick="window.open(this.href); return false">
+                  <img src="./images/tattertools.gif" alt="Tattertools" /> </a>
+              </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+              <!-- 배너모듈 - 이올린 -->
+              <div class="botton">
+                  <a href="http://www.eolin.com" onclick="window.open(this.href); return false">
+                  <img src="../image/rss.png" alt="Eolin" /> </a>
+              </div>
+          </s_sidebar_element>
+          <s_sidebar_element>
+              <!-- 배너모듈 - Rss Feed-->
+              <div class="botton">
+                  <a href="[##_rss_url_##]" onclick="window.open(this.href); return false">
+                  <img src="../image/rss.png" alt="rss"/> </a>
+              </div>
           </s_sidebar_element>
       </div>
       <!-- 사이드바 오른쪽 끝 -->
@@ -284,7 +331,7 @@
         <!-- comment-->
         <s_rp>
         <div class="comment">
-          <h3>plz...comment</h3>
+          <h3>댓글</h3>
           <!-- 리스트 -->
           <div class="commentList">
           <s_rp_container>
