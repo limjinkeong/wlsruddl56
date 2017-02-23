@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>태광실업</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        $(function(){
+
+
+
+        });
+    </script>
+    <style type="text/css">
+
+
+
+        *{margin:0;padding:0;}
+        ul,ol{list-style:none;}
+        img,video{vertical-align:top;}
+        a{text-decoration:none;}
+
+
+        header{
+            border:1px #F00 solid;
+            height:80px;
+            position:relative;
+            z-index:100;
+        }
+        header>div{
+            border:1px #F00 solid;
+            background-color:#fff;
+            overflow:hidden;
+        }
+
+        .gnb {
+            height:80px;
+            background-color:#000;
+            padding:0 30px;
+         }
+
+         .gnb .logo{
+             border:1px #F00 solid;
+             float:left;
+         }
+         .gnb .site-option{
+             border:1px #F00 solid;
+             height:80px;
+             width:200px;
+             float:right;
+         }
+         .gnb .menu{
+             border:1px #F00 solid;
+             height:80px;
+             width:1100px;
+             margin:0 auto;
+         }
+         .gnb .menu>ul>li{
+             outline:1px #F00 solid;
+             width:220px;
+             float:left;
+             text-align:center;
+         }
+
+         .gnb .menu>ul>li div{
+             padding:30px 0;
+         }
+         .gnb .menu>ul>li li{
+             line-height:45px;
+         }
+
+         .gnb .menu>ul>li div{
+             display:none;
+         }
+
+
+
+         .gnb .menu>ul>li>a{
+             line-height:80px;
+             color:#FFF;
+             text-transform:uppercase;
+             white-space:nowrap;
+             font-family: 'Oswald', sans-serif;
+         }
+
+         .gnb .site-option{
+             font-size:0;
+         }
+
+         .gnb .site-option a{
+             text-align:center;
+             font-size:14px;
+             display:inline-block;
+             vertical-align:top;
+
+             height:35px;
+             outline:1px #F00 solid;
+          }
+          .gnb .site-option a.home{
+              width:40px;
+              text-indent:-9999px;
+              background-color:#666;
+              background-image:url(http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png);
+              background-repeat:no-repeat;
+              background-position:center;
+          }
+           .gnb .site-option a.lang-en{
+               width:45px;
+               line-height:35px;
+               color:#FFF;
+               background-color:#086c6d;
+           }
+           .gnb .site-option a.sitemap{
+               text-align:right;
+               width:40px;
+           }
+
+           .gnb .site-option a.sitemap span{
+               line-height:100%;
+               position:relative;
+               left:4px;
+               top:2px;
+               display:inline-block;
+               width:32px;
+               height:4px;
+               background-color: #fff;
+
+           }
+
+           .gnb .site-option a.sitemap:hover span:first-child{
+               animation: aniline1 1s infinite;
+           }
+           .gnb .site-option a.sitemap:hover span:first-child+span{
+               animation: aniline2 1s infinite;
+           }
+           .gnb .site-option a.sitemap:hover span:first-child+span+span{
+               animation: aniline1 1.5s infinite;
+           }
+
+           @keyframes aniline1 {
+               0% { width:22px; }
+               50% {width:32px;  }
+               100% { width:22px; }
+           }
+           @keyframes aniline2 {
+               0% { width:22px; }
+               80% {width:32px;  }
+               100% { width:22px; }
+           }
+
+
+
+        .intro{
+            background-color: #CCC;
+            height:300px;
+            position:relative;
+            z-index:-1;
+        }
+
+        @media screen and (max-width:1000px) {
+            header{
+                position:static;
+            }
+            header>div{
+                overflow:visible;
+            }
+
+            .gnb .menu{
+                position:absolute;
+                right:0;
+                height:100%;
+                width:223px;
+                background-color:#FFF;
+            }
+            .gnb .menu>ul>li{
+                background-color:#FFF;
+            }
+
+
+            .gnb .menu>ul>li>a{
+                color:#000;
+                line-height:68px;
+
+            }
+
+        }
+
+
+     </style>
+</head>
+<body>
+
+    <header>
+        <div>
+           <div class="gnb">
+               <div class="logo">
+                    <a href="#"><img src="http://www.tkgroup.co.kr/kor/_Img/logo.png" alt="" ></a>
+               </div>
+
+               <div class="site-option">
+                   <a href="" class="home">home</a>
+                   <a href="" class="lang-en">ENG</a>
+                   <a href="" class="sitemap">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                   </a>
+               </div>
+
+               <div class="menu">
+                   <ul>
+                        <li><a href="#">company</a>
+                            <div>
+                                <ul>
+                                    <li><a href="">회사개요</a></li>
+                                    <li><a href="">CEO인사말</a></li>
+                                    <li><a href="">회사연혁</a></li>
+                                    <li><a href="">관계사 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">management innovation</a>
+                            <div>
+                                <ul>
+                                    <li><a href="">회사개요</a></li>
+                                    <li><a href="">CEO인사말</a></li>
+                                    <li><a href="">회사연혁</a></li>
+                                    <li><a href="">관계사 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">portfolio</a>
+                            <div>
+                                <ul>
+                                    <li><a href="">회사개요</a></li>
+                                    <li><a href="">CEO인사말</a></li>
+                                    <li><a href="">회사연혁</a></li>
+                                    <li><a href="">관계사 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">sustainability management</a>
+                            <div>
+                                <ul>
+                                    <li><a href="">회사개요</a></li>
+                                    <li><a href="">CEO인사말</a></li>
+                                    <li><a href="">회사연혁</a></li>
+                                    <li><a href="">관계사 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">recruit</a>
+                            <div>
+                                <ul>
+                                    <li><a href="">회사개요</a></li>
+                                    <li><a href="">CEO인사말</a></li>
+                                    <li><a href="">회사연혁</a></li>
+                                    <li><a href="">관계사 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+               </div>
+           </div>
+        </div>
+    </header>
+    <div class="intro">
+
+    </div>
+
+
+
+</body>
+</html>
