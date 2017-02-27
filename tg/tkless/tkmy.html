@@ -31,18 +31,20 @@
         header{
             border:1px #F00 solid;
             height:80px;
-            position:relative;
+            position:fixed;
+            width:100%;
             z-index:100;
         }
+
         header>div{
             border:1px #F00 solid;
-            background-color:#fff;
+            background-color: #fff;
             overflow:hidden;
         }
 
         .gnb {
             height:80px;
-            background-color:#000;
+            background-color: #000;
             padding:0 30px;
          }
 
@@ -57,6 +59,7 @@
              float:right;
          }
          .gnb .menu{
+
              border:1px #F00 solid;
              height:80px;
              width:1100px;
@@ -103,6 +106,7 @@
              height:35px;
              outline:1px #F00 solid;
           }
+
           .gnb .site-option a.home{
               width:40px;
               text-indent:-9999px;
@@ -118,15 +122,14 @@
                background-color:#086c6d;
            }
            .gnb .site-option a.sitemap{
+               font-size:0;
                text-align:right;
                width:40px;
            }
 
            .gnb .site-option a.sitemap span{
                line-height:100%;
-               position:relative;
-               left:4px;
-               top:2px;
+               margin:3px 0;
                display:inline-block;
                width:32px;
                height:4px;
@@ -159,12 +162,50 @@
 
         .intro{
             background-color: #CCC;
-            height:300px;
+            height:700px;
             position:relative;
             z-index:-1;
+            overflow:hidden;
+            width:100%;
+            transition:1s;
+            }
+        .intro .titler{
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index:10;
+            position:absolute;
+            text-align:center;
+        }
+        .intro .titler:before{
+            content:"";
+            display:inline-block;
+            height:100%;
+            vertical-align:middle;
+        }
+        .intro .titler img{
+            position:relative;
+            top:100px;
+            vertical-align:middle;
+            transition:1s;
         }
 
+
+        .intro video{
+            height:100%;
+
+        }
+
+
+
+
+
+
         @media screen and (max-width:1000px) {
+            html{
+                overflow-x: hidden;
+            }
             header{
                 position:static;
             }
@@ -174,22 +215,64 @@
 
             .gnb .menu{
                 position:absolute;
-                right:0;
+                right:-223px;
                 height:100%;
                 width:223px;
                 background-color:#FFF;
             }
             .gnb .menu>ul>li{
                 background-color:#FFF;
+                text-align:left;
             }
-
 
             .gnb .menu>ul>li>a{
+
                 color:#000;
                 line-height:68px;
-
             }
 
+            .gnb .menu>ul li a{
+                 padding:0 20px;
+            }
+
+            .gnb .menu>ul>li div{
+                padding:0 ;
+            }
+            .gnb .menu>ul>li:hover div{
+                display:block;
+            }
+
+
+            .gnb .menu>ul>li li{
+                background-color:#EEE;
+                border-top:1px #CCC solid;
+            }
+
+
+            .intro video{
+                border:1px #F00 solid;
+            }
+
+        }
+
+        @media screen and (max-width:800px){
+            .intro{
+                height:500px;
+            }
+
+            .intro .titler img{
+                margin-top:50px;
+            }
+        }
+
+         @media screen and (max-width:800px){
+            .intro{
+                height:500px;
+            }
+
+            .intro .titler img{
+                margin-top:50px;
+            }
         }
 
 
@@ -272,7 +355,10 @@
         </div>
     </header>
     <div class="intro">
-
+        <div class="titler"><img src="http://www.tkgroup.co.kr/kor/_Img/Main/m-slogan.png" alt="" /></div>
+        <video autoplay loop>
+            <source src="../../movie/tkm_titi.mp4" />
+        </video>
     </div>
 
 

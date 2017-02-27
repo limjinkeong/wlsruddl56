@@ -1,128 +1,287 @@
 // out: style.css, sourcemap: false, compress: true
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-*{margin: 0;
-  padding: 0;}
-a { text-decoration: none;}
-  ul li {list-style: none;}
-  body{font-family: 'Oswald','Noto Sans KR', sans-serif;}
 
-  .head{
+
+
+@import "https://fonts.googleapis.com/css?family=Oswald";
+
+@import "http://fonts.googleapis.com/earlyaccess/notosanskr.css";
+
+*
+{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+
+}
+
+a
+{
+	text-decoration:none
+}
+
+ul li
+{
+	list-style:none
+}
+
+body
+{
+	font-family:'Oswald','Noto Sans KR',sans-serif;
+	overflow-x:hidden;
+}
+
+.head
+{
+	width:100%;
+	height:80px;
+	background-color:#000;
+	position:relative
+}
+
+.head::after
+{
+	width:100%;
+	content:'';
+	display:block;
+	clear:both
+}
+
+.logo
+{
+	width:62px;
+	height:44px;
+	background:url(http://www.tkgroup.co.kr/kor/_Img/logo.png);
+	position:absolute;
+	top:18px;
+	left:30px
+}
+.left_gnb{
     width: 100%;
-    height: 80px;
-    background-color: #000;
-    position: relative;
-  }
-  .head::after{
-   width: 100%;
-   content: '';
-   display: block;
-   clear: both;
-  }
-  .logo{
-    width: 62px;
-    height: 44px;
-    background: url(http://www.tkgroup.co.kr/kor/_Img/logo.png);
+    background: #Fff;
+}
+.main_nav
+{
+	width:1200px;
+	background:red;
+	margin:0 auto;
+	text-align:center;
+}
+
+.main_nav .gnb
+{
+	width:100%
+}
+
+.main_nav .gnb li.depth_1
+{
+	display:block;
+	float:left;
+	line-height:80px;
+	width:240px;
+	text-align:center;
+	position:relative
+}
+
+.main_nav .gnb li.depth_1 a
+{
+	color:#FFF;
+	font-size:16px;
+	font-weight:700;
+	letter-spacing:-1px
+}
+
+.main_nav .gnb li.depth_1:hover:after
+{
+	display:block;
+	content:'';
+	width:100%;
+	height:3px;
+	background:#008889;
+	position:absolute;
+	bottom:0;
+	left:0
+}
+
+.main_nav .gnb li.depth_1:hover a
+{
+	color:#008889;
+}
+
+.sub_nav
+{
+	width:100%;
+	background:#fff;
+	float:left;
+	border-bottom:1px solid #000;
+	position:relative;
+	z-index:10;
+}
+
+.sub_nav .sub_gnb
+{
+	width:1200px;
+	margin:0 auto;
+}
+
+
+.sub_nav .sub_gnb ul
+{
+	float:left;
+	width:240px;
+	text-align:center;
+	padding:30px 0
+}
+
+.sub_nav .sub_gnb ul.depth_2:before {
+    content: "";
+    width: 1px;
+    height: 180px;
+    background: #f00;
     position: absolute;
-    top: 18px;
-    left: 30px;
-  }
-  .main_nav{
-    width: 1200px;
-    background: #F00;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .main_nav .gnb{
-    width: 100%;
-  }
-  .main_nav .gnb li.depth_1 {
+    left: 0;
+    top: 0;
     display:block;
-    float: left;
-    line-height: 80px;
-    width: 240px;
-    text-align: center;
-    position: relative;
-  }
-  .main_nav .gnb li.depth_1 a{
-    color: #FFF;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: -1px;
-  }
-  .main_nav .gnb li.depth_1:hover:after{
-     display: block;
-     content: '';
-     width: 100%;
-     height: 3px;
-     background: #008889;
-     position:absolute;
-     bottom: 0;
-     left: 0;
-  }
-  .main_nav .gnb li.depth_1 a:hover{
-     color : #008889;
-  }
-  .sub_nav {
-      width: 100%;
-      background: #fff;
-      float: left;
-      border-bottom: 1px solid #000;
-      position: relative;
-      z-index: 10;
-  }
-  .sub_nav .sub_gnb {
-      width: 1200px;
-      margin: 0 auto;
-  }
-  .sub_nav .sub_gnb ul {
-      float: left;
-      width: 240px;
-      text-align:center;
-      padding: 30px 0;
-  }
+}
+.sub_nav .sub_gnb ul.depth_2{
+    display: none;
+}
+.sub_nav .sub_gnb ul.depth_2 li
+{
+	width:100%;
+	line-height:35px;
 
-  .sub_nav .sub_gnb ul.depth_2 li {
-      width: 100%;
-      line-height: 30px;
-  }
-  .sub_nav .sub_gnb ul.depth_2 li:hover {
-      border-bottom:1px solid #008889;
+}
 
-  }
-  .sub_nav .sub_gnb ul.depth_2 li a {
-      color : #000;
-  }
-  .sub_nav .sub_gnb ul.depth_2 li a:hover{
-      color : #008889;
-  }
-  .right_nav{
-    position: absolute;
-    right: 30px;
-    top: 22px;
-  }
-  .right_nav span{
-    width: 45px;
-    height: 35px;
-    display: block;
-    float: left;
-  }
-  .right_nav .home {
-      background:url(http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png) 50% no-repeat;
+.sub_nav .sub_gnb ul.depth_2 li:hover
+{
+	border-bottom:1px solid #008889;
+}
 
-  }
-  .right_nav .eng {
-      background: #008889;
-  }
-  .right_nav .eng a{
-      color: #FFF;
-      text-align: center;
-  }
+.sub_nav .sub_gnb ul.depth_2 li:hover .h
+{
+	color:#008889;
+}
 
-  .right_nav .line3 {
-      margin-left: 10px;
-      background: #fafafa;
-  }
+.sub_nav .sub_gnb ul.depth_2 li a
+{
+	color:#000;
+}
+
+.right_nav
+{
+	position:absolute;
+	right:30px;
+	top:22px;
+}
+
+.right_nav span
+{
+	width:45px;
+	height:35px;
+	display:block;
+	float:left
+}
+
+.right_nav .home
+{
+	background:url(http://www.tkgroup.co.kr/kor/_Img/Layout/home-ico.png);
+	background-position:50%;
+	background-repeat:no-repeat
+}
+
+.right_nav .eng
+{
+	background:#008889
+}
+
+.right_nav .eng a
+{
+	color:#FFF;
+	font-size:12px;
+	font-weight:600;
+	display:block;
+	line-height:35px;
+	text-align:center;
+}
+
+.right_nav .eng:hover
+{
+	background:#199394
+}
+
+.right_nav .line3
+{
+	margin-left:10px;
+	background:#000
+}
+
+.right_nav .line3 .line_1
+{
+	width:22px;
+	height:2px;
+	background:#FFF;
+	position:absolute;
+	right:10px;
+	top:9px
+}
+
+.right_nav .line3 .line_2
+{
+	width:16px;
+	height:2px;
+	background:#FFF;
+	position:absolute;
+	right:10px;
+	top:17px;
+}
+
+.right_nav .line3 .line_3
+{
+	width:22px;
+	height:2px;
+	background:#FFF;
+	position:absolute;
+	right:10px;
+	top:25px
+}
+
+@media screen and (max-width:1000px) {
+    html{
+        overflow-x: hidden;
+    }
+    header{
+        position:static;
+    }
+    header>div{
+        overflow:visible;
+    }
+
+    .wrap .head .main_nav{
+        position:absolute;
+        right:0;
+        height:100%;
+        width:223px;
+        background-color:#FFF;
+        z-index: 100;
+    }
+    .wrap .head .main_nav ul.gnb li.depth_1{
+        background-color:#F00;
+        text-align:left;
+
+    }
+    .wrap .head .main_nav ul.gnb li.depth_1 a{
+        color:#000;
+        line-height: 68px;
+    }
+    .wrap .head .main_nav ul.gnb li.depth_1:hover{
+        display: block;
+    }
+
+}
+
+
+
+
 
   .visual {
       width: 100%;
@@ -156,24 +315,154 @@ a { text-decoration: none;}
   .visual_nav ul li a:hover{
     border-bottom: 1px solid #FFF;
   }
+
   .content{
       width: 1200px;
-      background: #F00;
+      background: #f00;
       margin: 0 auto;
       padding: 72px 0;
+	  text-align: center;
   }
-  .content span.left_icon{
-      width: 62px;
-      height: 62px;
-      border: 1px solid #000;
-      display: block;
-
-  }
-  .content span.left_icon a{
+  .content .left_icon{
     float: left;
     background: url(http://www.tkgroup.co.kr/kor/_Img/Layout/cont-prev.png);
+	width: 62px;
+	height: 62px;
+	background-repeat: no-repeat;
+
+  }
+  .content .left_icon:hover{
+	  background: url(http://www.tkgroup.co.kr/kor/_Img/Layout/cont-prev-o.png);
+	  width: 62px;
+	  height: 62px;
+	  float: left;
+	  background-repeat: no-repeat;
   }
   .content h2{
-      text-align: center;
-      font-size: 36px;
+	  text-align: center;
+	  font-size: 35px;
+	  display: inline-block;
+
+  }
+  .content .right_icon{
+    float: right;
+    background: url(http://www.tkgroup.co.kr/kor/_Img/Layout/cont-next.png);
+	background-repeat: no-repeat;
+	width: 62px;
+	height: 62px;
+
+  }
+  .content .right_icon:hover{
+	float: right;
+	background: url(http://www.tkgroup.co.kr/kor/_Img/Layout/cont-next-o.png);
+	background-repeat: no-repeat;
+	width: 62px;
+	height: 62px;
+  }
+  .paran{
+	position: relative;
+    min-height: 420px;
+    margin-bottom: 105px;
+  }
+
+  .paran:after{
+	  background: url(http://www.tkgroup.co.kr/kor/_Img/Content/vision-top.jpg);
+	  background-repeat: no-repeat;
+	  width: 2000px;
+      height: 100%;
+	  display: block;
+	  content: "";
+	  position: absolute;
+	  left: 50%;
+	  margin-left: -1000px;
+	  z-index: -1;
+	  top: 0;
+  }
+  .paran .ll{
+	  font-family: 'Oswald';
+	  font-size: 25px;
+	  font-weight: 400;
+	  text-align: center;
+	  color: #fff;
+	  padding: 130px 0 30px 0;
+  }
+  .paran .gg{
+	  	line-height: 120%;
+		color: #fff;
+		font-family: 'Oswald';
+		font-size: 50px;
+		text-align: center;
+		font-weight: 600;
+  }
+  .paran .gg .ee{
+	  display: block;
+  }
+
+
+
+
+
+
+
+
+  .foot_wrap{
+  	height: 355px;
+  	background: #000;
+  }
+
+  .foot_wrap .foot_top{
+  	height: 70px;
+  	background: #191919;
+  }
+  .foot_wrap .foot_top ul {
+   width: 1200px;
+   margin: 0 auto;
+   }
+   .foot_wrap .foot_top ul li {
+  	 display: inline-block;
+  	 text-align: center;
+  	 width: 598px;
+  	 padding: 0;
+  	 margin: 0;
+  	 line-height: 70px;
+  	 color: #e8e8e8;
+  	 font-size: 14px;
+   }
+   .foot_wrap .foot_top ul li span {
+  	display: inline-block;
+  	text-align: center;
+  	padding-left: 15px;
+  	padding-right: 30px;
+  	background: url(http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_arr.png) no-repeat right center;
+   }
+
+  .foot_wrap .foot_top .num1:before{
+  	content: '';
+  	display: inline-block;
+  	width: 26px;
+      height: 26px;
+      background: url(http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico01.png) no-repeat 0 center;
+      position: relative;
+  	top:8px;
+  }
+  .foot_wrap .foot_top .num2:before{
+  	content: '';
+  	display: inline-block;
+  	width: 26px;
+      height: 26px;
+      background: url(http://www.tkgroup.co.kr/_Template/Footer/tkgroup-kr/_Img/ftoplink_ico02.png) no-repeat 0 center;
+      position: relative;
+  	top:8px;
+  }
+  .foot_wrap .foot_bottom{
+  	text-align: center;
+  	color: #FFF;
+  }
+  .foot_wrap .foot_bottom .inner{
+  	width: 1200px;
+  	margin: 0 auto;
+  	margin-top: 50px;
+  }
+  .foot_wrap .foot_bottom .inner p.taeimg{
+  	margin-bottom: 20px;
   }
